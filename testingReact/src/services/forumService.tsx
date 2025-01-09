@@ -59,7 +59,7 @@ export async function getPostDetail(postID:any){
 }
 export async function createPost(postData:any){
     try{
-        const token = localStorage.getItem('access');
+        const token = localStorage.getItem('token');
         const response = await axios.post(`http://127.0.0.1:8000/api/blog/post/create/`,
             postData, 
          {headers: {

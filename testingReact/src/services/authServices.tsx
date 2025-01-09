@@ -30,14 +30,9 @@ export default function isAuthenthicated(){
     return !!token && token.trim() !== "";
 }
 
-export function logout(){
-    const navigate = useNavigate();
-    logoutFunc();
-    localStorage.removeItem('token');
-    navigate('/');
-}
 
-async function logoutFunc(){
+
+export async function logoutFunc(){
     try{
         const response = await axios.post(`http://127.0.0.1:8000/api/logout/`);
         return response.data;
